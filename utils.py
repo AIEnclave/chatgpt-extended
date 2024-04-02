@@ -39,7 +39,7 @@ def display_msg(msg, author):
     st.chat_message(author).write(msg)
 
 def configure_openai_api_key():
-    openai_api_key = "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"
+    openai_api_key = os.environ.get("OPENAI_API_KEY")
     if openai_api_key:
         st.session_state['OPENAI_API_KEY'] = openai_api_key
         os.environ['OPENAI_API_KEY'] = openai_api_key
